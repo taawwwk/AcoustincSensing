@@ -1,4 +1,4 @@
-package cclab.twkim.aucoustincsensing;
+package cclab.twkim.acousticsensing;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package cclab.twkim.aucoustincsensing;
+package cclab.twkim.acousticsensing;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -20,9 +19,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import cclab.twkim.aucoustincsensing.R;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
