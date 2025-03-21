@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private final long[][] vibrationPatterns = {
             {0, 500, 200, 500, 300, 500},
             {0, 300, 100, 300, 100, 300},
-            {0, 700, 300, 700, 300, 700}
+            {0, 700, 300, 700, 300, 700},
+            {0, 3000}
     };
 
     @Override
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             patternSpinner = findViewById(R.id.patternSpinner);
 
             // 진동 패턴 설정을 위한 Spinner 초기화
-            ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new String[]{"Pattern 1", "Pattern 2", "Pattern 3"});
+            ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new String[]{"Pattern 1", "Pattern 2", "Pattern 3", "Pattern 4"});
             spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             patternSpinner.setAdapter(spinnerAdapter);
 
