@@ -6,6 +6,7 @@ import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
@@ -140,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // 레코딩 설정
-            filePath = new File(recordingsDir, System.currentTimeMillis() + ".mp3").getAbsolutePath();
+            filePath = new File(recordingsDir, System.currentTimeMillis() + ".wav").getAbsolutePath();
             mediaRecorder = new MediaRecorder();
             mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC); // 오디오 소스 설정
             mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP); // 저장할 파일의 포맷 설정
@@ -150,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
             mediaRecorder.prepare(); // 레코딩 준비
             mediaRecorder.start(); // 레코딩  시작
+            new android.os.Handler().postDelayed(this::stopRecording, 3000);
         } catch (Exception e) {
             Log.e(TAG, "Error starting recording", e);
             Toast.makeText(this, "녹음 시작 중 오류 발생", Toast.LENGTH_SHORT).show();
